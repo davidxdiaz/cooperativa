@@ -1,49 +1,98 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a class="navbar-brand" >Cooperativa CDE</a>
+    <a class="navbar-brand">Cooperativa CDE</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="navbar-collapse collapse" id="navbarsExample09">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="list-item-active">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="list-item-active">Acerca de nosotros</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown09">
-            <a class="dropdown-item" data-toggle="modal" data-target="#LoginModal">Iniciar Sesion</a>
-            <a class="dropdown-item" href="#">Registrarse</a>
-          </div>
-        </li>
-      </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="list-item-active">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about" routerLinkActive="list-item-active">Acerca de nosotros</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown09">
+                    <a class="dropdown-item" data-toggle="modal" data-target="#LoginModal">Iniciar Sesión</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#RegisterModal">Registrarse</a>
+                </div>
+            </li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
 
 
-  <!-- Modal Login -->
+<!-- Modal Login -->
 <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="LoginModalLabel">Iniciar Sesion</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="LoginModalLabel">Iniciar Sesión</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="LoginEmail">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña: </label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="LoginPassword">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
         </div>
-        <div class="modal-body">
-          Correo
-          <br>
-          Contraseña
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Iniciar Sesion</button>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+<!-- Modal Register  -->
+<div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header ">
+                <h5 class="modal-title" id="RegisterModalLabel">Registrarse</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" id="RegisterName" placeholder="Nombre">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" id="RegisterLastName" placeholder="Apelidos">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <br>
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="RegisterEmail" placeholder="Correo electrónico">
+                        <br>
+                        <input type="text" class="form-control" id="RegisterNumber" placeholder="Número de celular">
+                        <br>
+                        <input type="password" class="form-control" id="RegisterPassword" placeholder="Contraseña">
+                        <br>
+                        <input type="password" class="form-control" id="RegisterConfirmPassword" placeholder="Confirmar contraseña">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Registrar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
