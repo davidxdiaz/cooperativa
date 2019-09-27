@@ -1,27 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <a class="navbar-brand" >Cooperativa CDE</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info rounded text-white">
+    <a class="navbar-brand"  routerLink="/home" routerLinkActive="list-item-active">Cooperativa CDE</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="navbar-collapse collapse" id="navbarsExample09">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/home" routerLinkActive="list-item-active">Inicio</a>
-        </li>
+      <ul class="navbar-nav ml-auto text-white">
         <li class="nav-item">
           <a class="nav-link" routerLink="/about" routerLinkActive="list-item-active">Acerca de nosotros</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown09">
-            <a class="dropdown-item" data-toggle="modal" data-target="#LoginModal">Iniciar Sesion</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdowuser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Usuario</a>
+          <div class="dropdown-menu d-left" aria-labelledby="dropdownuser">
+            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#LoginModal">Iniciar Sesion</a>
             <a class="dropdown-item" href="#">Registrarse</a>
           </div>
         </li>
       </ul>
     </div>
-  </nav>
+</nav>
 
 
 

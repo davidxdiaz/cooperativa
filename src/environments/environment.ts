@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyAPQ6v-FPi_WMt7tLOGGTnIfcnVOKXuQWE",
+    authDomain: "cooperativa-cde.firebaseapp.com",
+    databaseURL: "https://cooperativa-cde.firebaseio.com",
+    projectId: "cooperativa-cde",
+    storageBucket: "",
+    messagingSenderId: "6565412854",
+    appId: "1:6565412854:web:31aba9cc10692a81a791d7",
+    measurementId: "G-H690GDNJKV",
+  }
 };
 
 /*
