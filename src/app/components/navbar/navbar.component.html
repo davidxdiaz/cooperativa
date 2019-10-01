@@ -1,99 +1,119 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-info rounded text-white">
-    <a class="navbar-brand"  routerLink="/home" routerLinkActive="list-item-active">Cooperativa CDE</a>
-
+    <a class="navbar-brand"  routerLink="/home">Cooperativa CDE</a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="navbar-collapse collapse" id="navbarsExample09">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/home" routerLinkActive="list-item-active">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/about" routerLinkActive="list-item-active">Acerca de nosotros</a>
+                <a class="nav-link" routerLink="/about">Acerca de nosotros</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown09">
-                    <a class="dropdown-item" data-toggle="modal" data-target="#LoginModal">Iniciar Sesión</a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#RegisterModal">Registrarse</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdownuser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Usuario</a>
+                <div class="dropdown-menu d-left" aria-labelledby="dropdownuser">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#loginModal">Iniciar Sesión</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registerModal">Registrarse</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
 
-
-
 <!-- Modal Login -->
-<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="LoginModalLabel">Iniciar Sesión</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <div class="modal-header bg-info text-white">
+                <span class="center-spacer"></span>
+                <h5 class="modal-title" id="loginModalTitle">Iniciar Sesión</h5>
+                <span class="center-spacer"></span>
             </div>
-            <div class="modal-body">
+        <div class="modal-body">
+            <span class="center-spacer"></span>
+            <form>
                 <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Correo:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="LoginEmail">
+                    <div class="col-sm-12">
+                        <div class="forml-container">
+                            <mat-form-field>
+                                <input matInput placeholder="Correo" [formControl]="email" required>
+                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña: </label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="LoginPassword">
+                    <div class="col-sm-12">
+                        <div class="forml-container">
+                            <mat-form-field class="legacy">
+                                <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" required>
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Iniciar Sesión</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            </div>
+            </form>
+            <span class="center-spacer"></span>
         </div>
+        <div class="modal-footer">
+            <span class="center-spacer"></span>
+            <button mat-raised-button  class="text-white bg-info">Iniciar Sesión</button>
+            <button mat-raised-button  class="text-white bg-danger" data-dismiss="modal">Cancelar</button>
+            <span class="center-spacer"></span>
+        </div>
+      </div>
     </div>
 </div>
 
-<!-- Modal Register  -->
-<div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<!-- Modal Register -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header ">
-                <h5 class="modal-title" id="RegisterModalLabel">Registrarse</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+            <div class="modal-header bg-info text-white">
+                <span class="center-spacer"></span>
+                <h5 class="modal-title" id="registerModalTitle">Registrarse</h5>
+                <span class="center-spacer"></span>
             </div>
-            <div class="modal-body">
+        <div class="modal-body">
+            <form class="w-form">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="email" class="form-control" id="RegisterName" placeholder="Nombre">
+                        <mat-form-field class="w-full-width">
+                            <input matInput placeholder="Nombre">
+                        </mat-form-field>
                     </div>
-                    <div class="form-group col-md-6">
-                        <input type="password" class="form-control" id="RegisterLastName" placeholder="Apelidos">
+                     <div class="form-group col-md-6">
+                        <mat-form-field class="w-full-width">
+                            <input matInput placeholder="Apellido">
+                        </mat-form-field>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <br>
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="RegisterEmail" placeholder="Correo electrónico">
-                        <br>
-                        <input type="text" class="form-control" id="RegisterNumber" placeholder="Número de celular">
-                        <br>
-                        <input type="password" class="form-control" id="RegisterPassword" placeholder="Contraseña">
-                        <br>
-                        <input type="password" class="form-control" id="RegisterConfirmPassword" placeholder="Confirmar contraseña">
-                    </div>
-                </div>
+                </div>                
+                <p>
+                    <mat-form-field class="w-full-width">
+                        <input matInput placeholder="Correo electrónico" [formControl]="emailR" required>
+                            <mat-error *ngIf="emailR.invalid">{{getErrorMsgEmailR()}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-full-width">
+                        <input matInput placeholder="Número de celular" required>
+                    </mat-form-field>
+                    <mat-form-field class="w-full-width">
+                            <input matInput placeholder="Contraseña" type="password" required>
+                    </mat-form-field>
+                    <mat-form-field class="w-full-width">
+                            <input matInput placeholder="Confirmar Contraseña" type="password" required>
+                    </mat-form-field>
+                </p>
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Registrar</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <span class="center-spacer"></span>
+                <button mat-raised-button  class="text-white bg-info">Registrarse</button>
+                <button mat-raised-button  class="text-white bg-danger" data-dismiss="modal">Cancelar</button>
+                <span class="center-spacer"></span>    
             </div>
         </div>
     </div>
 </div>
+
+
