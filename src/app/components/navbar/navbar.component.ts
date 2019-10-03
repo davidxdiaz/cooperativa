@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   //Variables para validar el register
   emailR = new FormControl('', [Validators.required, Validators.email]);
- 
+  isLogged: boolean = true
   constructor() { }
 
   ngOnInit() {

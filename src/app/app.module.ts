@@ -24,6 +24,8 @@ import { MatListModule } from '@angular/material/list';
 //FORMS
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { UserDataComponent } from './components/user/user-data/user-data.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    AboutComponent
+    AboutComponent,
+    UserDataComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
